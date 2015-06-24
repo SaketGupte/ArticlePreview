@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="6254" systemVersion="14A389" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="ArticleDetails">
+        <attribute name="articleLink" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="authorName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="headline" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="imageLink" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="leadParagraph" optional="YES" attributeType="String">
+            <userInfo/>
+        </attribute>
+        <attribute name="publishDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <relationship name="searchTerm" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="SearchTerm" inverseName="articleDetails" inverseEntity="SearchTerm" syncable="YES"/>
+        <userInfo/>
+    </entity>
+    <entity name="SearchTerm" syncable="YES">
+        <attribute name="keyword" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="lastSearchDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <relationship name="articleDetails" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="ArticleDetails" inverseName="searchTerm" inverseEntity="ArticleDetails" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="ArticleDetails" positionX="-4203" positionY="-1197" width="128" height="148"/>
+        <element name="SearchTerm" positionX="-3998" positionY="-1161" width="128" height="88"/>
+    </elements>
+</model>
